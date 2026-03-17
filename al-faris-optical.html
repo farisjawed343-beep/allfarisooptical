@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Faris Optical — Premium Eyewear, Jamshedpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black:   #0A0A0A;
+  --black2:  #111111;
+  --black3:  #1A1A1A;
+  --mid:     #888888;
+  --offwhite:#F4F2EE;
+  --white:   #FFFFFF;
+  --wa:      #25D366;
+  --serif:   'Cormorant Garamond', Georgia, serif;
+  --sans:    'DM Sans', sans-serif;
+  --ease:    cubic-bezier(.25,.46,.45,.94);
+}
+
+body { background: var(--white); color: var(--black); font-family: var(--sans); overflow-x: hidden; }
+
+/* TICKER */
+.ticker { background: var(--black); color: rgba(255,255,255,0.6); padding: 9px 0; overflow: hidden; }
+.ticker-track {
+  display: flex; gap: 80px;
+  white-space: nowrap;
+  animation: ticker-anim 22s linear infinite;
+  width: max-content;
+}
+.ticker-item { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 500; flex-shrink: 0; }
+.ticker-item b { color: var(--white); font-weight: 600; }
+@keyframes ticker-anim { to { transform: translateX(-50%); } }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 900;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px; height: 72px;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--black); }
+.nav-logo-mark {
+  width: 38px; height: 38px; border: 2px solid var(--black); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 16px;
+  transition: background .25s, color .25s;
+}
+.nav-logo:hover .nav-logo-mark { background: var(--black); color: var(--white); }
+.nav-brand { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: .5px; }
+.nav-sub { font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--mid); display: block; margin-top: 2px; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--black); text-decoration: none; font-weight: 500;
+  position: relative; padding-bottom: 3px; transition: color .2s;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--black); transition: width .3s var(--ease);
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--black); color: var(--white) !important; padding: 10px 24px; border-radius: 2px; font-size: 11px !important; letter-spacing: 2px !important; }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--black3) !important; }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.hero-left {
+  background: var(--black); display: flex; flex-direction: column; justify-content: center;
+  padding: 100px 80px; position: relative; overflow: hidden;
+}
+.hero-left::before {
+  content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.04); top: -100px; right: -100px;
+}
+.hero-eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 30px; animation: fadeUp .8s var(--ease) both .1s; }
+.hero h1 { font-family: var(--serif); font-size: clamp(52px, 5.5vw, 84px); font-weight: 300; color: var(--white); line-height: 1.0; letter-spacing: -1px; margin-bottom: 32px; animation: fadeUp .8s var(--ease) both .25s; }
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.45); }
+.hero-desc { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.9; max-width: 340px; margin-bottom: 50px; font-weight: 300; animation: fadeUp .8s var(--ease) both .4s; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp .8s var(--ease) both .55s; }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--white); color: var(--black); padding: 14px 30px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; border-radius: 2px; transition: background .25s, transform .2s;
+}
+.btn-white:hover { background: var(--offwhite); transform: translateY(-2px); }
+.btn-wa-s {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--wa); color: var(--white); padding: 14px 30px;
+  font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; border-radius: 2px; transition: background .25s, transform .2s;
+}
+.btn-wa-s:hover { background: #1ebe5d; transform: translateY(-2px); }
+.hero-right { position: relative; overflow: hidden; }
+.hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.88) contrast(1.05); animation: heroZoom 8s ease forwards; }
+@keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
+.hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.35) 0%, transparent 60%); }
+.hero-stat { position: absolute; bottom: 40px; right: 40px; text-align: right; }
+.hero-stat-num { font-family: var(--serif); font-size: 60px; font-weight: 300; color: rgba(255,255,255,0.9); line-height: 1; }
+.hero-stat-lbl { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* BRANDS */
+.brands { background: var(--offwhite); padding: 26px 0; overflow: hidden; border-top: 1px solid rgba(0,0,0,0.07); border-bottom: 1px solid rgba(0,0,0,0.07); }
+.brands-track { display: flex; gap: 56px; animation: scroll-l 22s linear infinite; width: max-content; align-items: center; }
+.brand-nm { font-family: var(--serif); font-size: 19px; font-weight: 600; color: rgba(0,0,0,0.18); letter-spacing: 1px; white-space: nowrap; transition: color .3s; }
+.brand-nm:hover { color: var(--black); }
+.brand-dot { color: rgba(0,0,0,0.1); font-size: 8px; }
+@keyframes scroll-l { to { transform: translateX(-50%); } }
+
+/* CINEMA */
+.cinema { background: var(--black); }
+.cinema-head {
+  padding: 80px 80px 48px;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;
+}
+.cinema-head h2 { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 300; color: var(--white); line-height: 1.1; }
+.cinema-head h2 em { font-style: italic; color: rgba(255,255,255,0.4); }
+.cinema-head p { max-width: 290px; font-size: 13px; color: rgba(255,255,255,0.3); line-height: 1.8; font-weight: 300; flex-shrink: 0; }
+
+/* Full-width carousel */
+.carousel-wrap { position: relative; width: 100%; height: 600px; overflow: hidden; }
+.carousel-track { display: flex; height: 100%; transition: transform .9s var(--ease); }
+.carousel-slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; }
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.82) contrast(1.08); transition: transform 6s ease; }
+.carousel-slide.is-active img { transform: scale(1.03); }
+.slide-veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%); }
+.slide-cap { position: absolute; bottom: 52px; left: 80px; }
+.slide-num { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+.slide-title { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--white); }
+
+.carousel-arrows { position: absolute; bottom: 52px; right: 80px; display: flex; gap: 12px; }
+.c-arr {
+  width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.3);
+  background: transparent; color: rgba(255,255,255,0.7); border-radius: 50%;
+  cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center;
+  transition: all .25s; font-family: var(--sans);
+}
+.c-arr:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+.carousel-dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.c-dot { width: 28px; height: 2px; background: rgba(255,255,255,0.22); border-radius: 2px; cursor: pointer; transition: background .3s, width .3s; }
+.c-dot.on { background: var(--white); width: 50px; }
+
+/* SECTION BASE */
+.sec { padding: 100px 80px; }
+.s-lbl { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; display: block; }
+.s-h { font-family: var(--serif); font-size: clamp(34px, 3.5vw, 52px); font-weight: 300; line-height: 1.1; margin-bottom: 16px; }
+.s-h em { font-style: italic; color: var(--mid); }
+.s-p { color: var(--mid); font-size: 14px; line-height: 1.8; max-width: 480px; font-weight: 300; }
+.s-rule { width: 40px; height: 1px; background: var(--black); margin: 22px 0 54px; }
+
+/* CATEGORIES */
+.cat-sec { background: var(--white); }
+.cat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.08); }
+.cat-card {
+  background: var(--white); padding: 46px 38px;
+  text-decoration: none; color: var(--black); display: block;
+  transition: background .3s; position: relative; overflow: hidden;
+}
+.cat-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--black); transition: width .4s var(--ease); }
+.cat-card:hover { background: var(--offwhite); }
+.cat-card:hover::after { width: 100%; }
+.cat-n { font-family: var(--serif); font-size: 44px; font-weight: 300; color: rgba(0,0,0,0.07); margin-bottom: 18px; line-height: 1; }
+.cat-ic { font-size: 30px; margin-bottom: 18px; display: block; }
+.cat-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 10px; }
+.cat-card p { font-size: 13px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+.cat-tag { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--black); border-bottom: 1px solid var(--black); padding-bottom: 2px; }
+
+/* PRODUCTS */
+.prod-sec { background: var(--offwhite); }
+.prod-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.prod-card { background: var(--white); border: 1px solid rgba(0,0,0,0.07); overflow: hidden; cursor: pointer; transition: box-shadow .3s, transform .3s; }
+.prod-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.prod-img { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 62px; position: relative; overflow: hidden; }
+.prod-badge { position: absolute; top: 14px; left: 14px; background: var(--white); color: var(--black); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; font-weight: 600; }
+.prod-body { padding: 22px 20px; }
+.prod-brand { font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 6px; }
+.prod-name { font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.prod-det { font-size: 12px; color: var(--mid); font-weight: 300; margin-bottom: 16px; line-height: 1.55; }
+.prod-foot { display: flex; align-items: center; justify-content: space-between; }
+.prod-price { font-family: var(--serif); font-size: 22px; font-weight: 600; }
+.prod-sub { font-size: 10px; color: var(--mid); letter-spacing: 1px; }
+.prod-btn { background: var(--black); color: var(--white); border: none; padding: 9px 16px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: var(--sans); font-weight: 600; transition: background .2s; }
+.prod-btn:hover { background: var(--black3); }
+
+/* WHY */
+.why-sec { background: var(--black); }
+.why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(255,255,255,0.06); margin-top: 56px; }
+.why-card { background: var(--black); padding: 44px 34px; transition: background .3s; }
+.why-card:hover { background: var(--black3); }
+.why-ic { font-size: 36px; margin-bottom: 22px; display: block; }
+.why-card h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+.why-card p { font-size: 13px; color: rgba(255,255,255,0.3); line-height: 1.75; font-weight: 300; }
+
+/* CONTACT */
+.contact-sec { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(0,0,0,0.1); margin-top: 54px; }
+.c-info { padding: 58px 54px; border-right: 1px solid rgba(0,0,0,0.1); }
+.c-row { display: flex; gap: 18px; margin-bottom: 34px; align-items: flex-start; }
+.c-icon { width: 42px; height: 42px; border: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.c-lbl { font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--mid); margin-bottom: 6px; }
+.c-val { font-size: 15px; line-height: 1.65; }
+.c-val a { color: var(--black); text-decoration: none; }
+.c-val a:hover { text-decoration: underline; }
+.wa-big { display: inline-flex; align-items: center; gap: 10px; background: var(--wa); color: var(--white); padding: 13px 28px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; margin-top: 8px; transition: background .25s, transform .2s; }
+.wa-big:hover { background: #1ebe5d; transform: translateY(-2px); }
+.c-form { padding: 58px 54px; }
+.c-form h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; margin-bottom: 32px; }
+.f-grp { margin-bottom: 20px; }
+.f-grp label { display: block; font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--mid); margin-bottom: 8px; }
+.f-grp input, .f-grp textarea { width: 100%; background: var(--offwhite); border: none; border-bottom: 1px solid rgba(0,0,0,0.15); padding: 12px 14px; font-family: var(--sans); font-size: 14px; color: var(--black); outline: none; transition: border-color .25s, background .25s; resize: none; }
+.f-grp input:focus, .f-grp textarea:focus { border-color: var(--black); background: var(--white); }
+.f-sub { width: 100%; background: var(--black); color: var(--white); border: none; padding: 15px; font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer; transition: background .25s; }
+.f-sub:hover { background: var(--black3); }
+
+/* FOOTER */
+footer { background: var(--black); padding: 60px 80px 36px; }
+.foot-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 60px; margin-bottom: 46px; padding-bottom: 46px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.foot-brand { font-family: var(--serif); font-size: 32px; font-weight: 300; color: var(--white); margin-bottom: 12px; }
+.foot-tag { font-size: 12px; color: rgba(255,255,255,0.28); letter-spacing: 1px; font-weight: 300; }
+.foot-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; align-items: center; }
+.foot-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; transition: color .2s; }
+.foot-links a:hover { color: var(--white); }
+.foot-btm { font-size: 11px; color: rgba(255,255,255,0.15); letter-spacing: 1px; text-align: center; }
+
+/* FLOAT WA */
+.wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.wa-bubble { background: var(--white); color: var(--black); padding: 9px 18px; border-radius: 24px; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.15); opacity: 0; transform: translateX(10px); transition: all .3s; }
+.wa-float:hover .wa-bubble { opacity: 1; transform: translateX(0); }
+.wa-circle { width: 56px; height: 56px; background: var(--wa); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.45); animation: wapop 2.5s ease-in-out infinite; }
+.wa-circle svg { width: 28px; height: 28px; fill: white; }
+@keyframes wapop { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); } 50% { box-shadow: 0 6px 38px rgba(37,211,102,0.7); } }
+
+/* RESPONSIVE */
+@media (max-width:1024px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 80px 28px; min-height: 70vh; }
+  .hero-right { height: 50vw; }
+  .sec { padding: 70px 28px; }
+  .cinema-head { padding: 60px 28px 40px; flex-direction: column; }
+  .slide-cap { left: 28px; }
+  .carousel-arrows { right: 28px; }
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+  .prod-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .c-info { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .foot-top { flex-direction: column; gap: 28px; }
+  footer { padding: 48px 28px 28px; }
+}
+@media (max-width:600px) {
+  .cat-grid, .prod-grid, .why-grid { grid-template-columns: 1fr; }
+  .carousel-wrap { height: 60vw; min-height: 220px; }
+  .hero-actions { flex-direction: column; }
+  .btn-white, .btn-wa-s { justify-content: center; }
+  .wa-bubble { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><b>Ray-Ban</b> &nbsp;·&nbsp; Vogue &nbsp;·&nbsp; Prada &nbsp;·&nbsp; Gucci &nbsp;·&nbsp; Dior &nbsp;·&nbsp; Oakley &nbsp;·&nbsp; Crizal &nbsp;·&nbsp; Nikon &nbsp;·&nbsp; Calvin Klein &nbsp;·&nbsp; D&amp;G</span>
+    <span class="ticker-item">&nbsp;&nbsp;&nbsp;📍 Road No 2, Near Bharat Bakery, Azad Nagar, Mango, Jamshedpur</span>
+    <span class="ticker-item">&nbsp;&nbsp;&nbsp;📞 <b>+91 93341 89990</b> &nbsp;·&nbsp; Open Mon–Sat 10am–9pm</span>
+    <span class="ticker-item">&nbsp;&nbsp;&nbsp;<b>Ray-Ban</b> &nbsp;·&nbsp; Vogue &nbsp;·&nbsp; Prada &nbsp;·&nbsp; Gucci &nbsp;·&nbsp; Dior &nbsp;·&nbsp; Oakley &nbsp;·&nbsp; Crizal &nbsp;·&nbsp; Nikon &nbsp;·&nbsp; Calvin Klein &nbsp;·&nbsp; D&amp;G</span>
+    <span class="ticker-item">&nbsp;&nbsp;&nbsp;📍 Road No 2, Near Bharat Bakery, Azad Nagar, Mango, Jamshedpur</span>
+    <span class="ticker-item">&nbsp;&nbsp;&nbsp;📞 <b>+91 93341 89990</b> &nbsp;·&nbsp; Open Mon–Sat 10am–9pm</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">👁</div>
+    <div>
+      <span class="nav-brand">Al Faris Optical</span>
+      <span class="nav-sub">Jamshedpur</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#store">Our Store</a></li>
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#frames">Frames</a></li>
+    <li><a href="#contact" class="nav-cta">Visit Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Est. Jamshedpur &nbsp;·&nbsp; Premium Optical</p>
+    <h1>See the<br>World <em>in<br>Clarity</em></h1>
+    <p class="hero-desc">Curated eyewear from the world's finest brands. Expert eye testing, same-day prescription fulfilment, and frames for every face — all in one place.</p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn-white">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Explore Collection
+      </a>
+      <a href="https://wa.me/919334189990" target="_blank" class="btn-wa-s">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.741 5.473 2.038 7.773L.047 31.953l8.385-2.198A15.924 15.924 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.292 13.292 0 01-6.797-1.866l-.487-.289-5.016 1.315 1.337-4.884-.317-.5A13.26 13.26 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.278-9.917c-.398-.199-2.356-1.163-2.72-1.296-.365-.133-.631-.199-.897.2-.266.398-1.03 1.296-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.057-1.981-2.363-2.213-2.761-.232-.398-.025-.613.174-.811.179-.179.398-.465.597-.697.199-.233.266-.399.398-.665.133-.266.067-.499-.033-.697-.1-.2-.897-2.163-1.23-2.96-.324-.777-.653-.672-.897-.684-.232-.01-.499-.013-.765-.013s-.698.1-1.064 1.063c-.366.963 1.062 2.12 3.297 3.218"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="/mnt/user-data/uploads/1000005977.png" alt="Al Faris Optical Store">
+    <div class="hero-right-overlay"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">500+</div>
+      <div class="hero-stat-lbl">Frames in Stock</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands">
+  <div class="brands-track">
+    <span class="brand-nm">Ray-Ban</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Vogue</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Prada</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Gucci</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Dior</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Oakley</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Crizal</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Nikon</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Calvin Klein</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Dolce &amp; Gabbana</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Clara</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Bausch &amp; Lomb</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Ray-Ban</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Vogue</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Prada</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Gucci</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Dior</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Oakley</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Crizal</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Nikon</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Calvin Klein</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Dolce &amp; Gabbana</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Clara</span><span class="brand-dot">◆</span>
+    <span class="brand-nm">Bausch &amp; Lomb</span><span class="brand-dot">◆</span>
+  </div>
+</div>
+
+<!-- CINEMATIC STORE BANNER -->
+<section class="cinema" id="store">
+  <div class="cinema-head">
+    <div>
+      <span class="s-lbl" style="color:rgba(255,255,255,0.28)">Step Inside</span>
+      <h2>A Store Built<br>for <em>Eyewear Lovers</em></h2>
+    </div>
+    <p>Our beautifully designed showroom in Mango, Jamshedpur features hundreds of frames across all categories — from prescription glasses to the latest designer sunwear.</p>
+  </div>
+
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="cTrack">
+
+      <div class="carousel-slide is-active">
+        <img src="/mnt/user-data/uploads/1000005977.png" alt="Al Faris Optical — Full Store Panorama">
+        <div class="slide-veil"></div>
+        <div class="slide-cap">
+          <div class="slide-num">01 / 03</div>
+          <div class="slide-title">Full Store Panorama</div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="/mnt/user-data/uploads/1000005975.png" alt="Al Faris Optical — Eyeglasses & Sunglasses Wall">
+        <div class="slide-veil"></div>
+        <div class="slide-cap">
+          <div class="slide-num">02 / 03</div>
+          <div class="slide-title">Eyeglasses &amp; Sunglasses Display</div>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="/mnt/user-data/uploads/1000005979.png" alt="Al Faris Optical — Designer Sunglasses Wall">
+        <div class="slide-veil"></div>
+        <div class="slide-cap">
+          <div class="slide-num">03 / 03</div>
+          <div class="slide-title">Designer Sunglasses Collection</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="carousel-arrows">
+      <button class="c-arr" onclick="cSlide(-1)">&#8592;</button>
+      <button class="c-arr" onclick="cSlide(1)">&#8594;</button>
+    </div>
+
+    <div class="carousel-dots" id="cDots">
+      <div class="c-dot on" onclick="cGoto(0)"></div>
+      <div class="c-dot" onclick="cGoto(1)"></div>
+      <div class="c-dot" onclick="cGoto(2)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="sec cat-sec" id="collection">
+  <span class="s-lbl">What We Offer</span>
+  <h2 class="s-h">Browse by <em>Category</em></h2>
+  <p class="s-p">Everything you need for perfect vision and effortless style, all under one roof.</p>
+  <div class="s-rule"></div>
+  <div class="cat-grid">
+    <a class="cat-card" href="https://wa.me/919334189990?text=Hi!%20I'm%20interested%20in%20Prescription%20Eyeglasses" target="_blank">
+      <div class="cat-n">01</div>
+      <span class="cat-ic">🕶</span>
+      <h3>Prescription Eyeglasses</h3>
+      <p>Full-rim, half-rim, rimless. All power ranges with anti-glare, blue-cut &amp; photochromic lenses.</p>
+      <span class="cat-tag">From ₹499</span>
+    </a>
+    <a class="cat-card" href="https://wa.me/919334189990?text=Hi!%20I'm%20interested%20in%20Designer%20Sunglasses" target="_blank">
+      <div class="cat-n">02</div>
+      <span class="cat-ic">😎</span>
+      <h3>Designer Sunglasses</h3>
+      <p>Polarized, UV400 protection. Aviator, wayfarer, sport &amp; fashion frames from top global brands.</p>
+      <span class="cat-tag">From ₹299</span>
+    </a>
+    <a class="cat-card" href="https://wa.me/919334189990?text=Hi!%20I'm%20interested%20in%20Kids%20Eyewear" target="_blank">
+      <div class="cat-n">03</div>
+      <span class="cat-ic">👶</span>
+      <h3>Kids Eyewear</h3>
+      <p>Durable, flexible, safe — designed specially for children with fun colors &amp; a perfect fit.</p>
+      <span class="cat-tag">From ₹349</span>
+    </a>
+    <a class="cat-card" href="https://wa.me/919334189990?text=Hi!%20I'm%20interested%20in%20Premium%20Lenses" target="_blank">
+      <div class="cat-n">04</div>
+      <span class="cat-ic">🔬</span>
+      <h3>Premium Lenses</h3>
+      <p>Crizal, Nikon, Zeiss — anti-reflection, blue light filter &amp; scratch-resistant coatings.</p>
+      <span class="cat-tag">From ₹799</span>
+    </a>
+    <a class="cat-card" href="https://wa.me/919334189990?text=Hi!%20I'm%20interested%20in%20Sports%20Eyewear" target="_blank">
+      <div class="cat-n">05</div>
+      <span class="cat-ic">⚡</span>
+      <h3>Sports Eyewear</h3>
+      <p>High-impact sport frames and polarized lenses for outdoor activities and athletes.</p>
+      <span class="cat-tag">From ₹699</span>
+    </a>
+    <a class="cat-card" href="https://wa.me/919334189990?text=Hi!%20I'm%20interested%20in%20Contact%20Lenses" target="_blank">
+      <div class="cat-n">06</div>
+      <span class="cat-ic">💧</span>
+      <h3>Contact Lenses</h3>
+      <p>Daily, monthly &amp; colored contact lenses available for all prescriptions.</p>
+      <span class="cat-tag">From ₹250</span>
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec prod-sec" id="frames">
+  <span class="s-lbl">Featured Frames</span>
+  <h2 class="s-h">Popular <em>Picks</em></h2>
+  <p class="s-p">Handpicked bestsellers. Tap Enquire to chat directly on WhatsApp.</p>
+  <div class="s-rule"></div>
+  <div class="prod-grid">
+    <div class="prod-card" onclick="window.open('https://wa.me/919334189990?text=Hi!%20I%20want%20to%20know%20about%20Classic%20Aviator','_blank')">
+      <div class="prod-img" style="background:#111"><span>🕶</span><span class="prod-badge">Bestseller</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Ray-Ban Style</div>
+        <div class="prod-name">Classic Aviator</div>
+        <div class="prod-det">Timeless gold-frame with UV400 polarized lenses.</div>
+        <div class="prod-foot">
+          <div><div class="prod-price">₹599</div><div class="prod-sub">Up to ₹2,499</div></div>
+          <button class="prod-btn">Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card" onclick="window.open('https://wa.me/919334189990?text=Hi!%20I%20want%20to%20know%20about%20Cat%20Eye%20Frames','_blank')">
+      <div class="prod-img" style="background:#1a1a2e"><span>😎</span><span class="prod-badge">Trending</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Vogue Style</div>
+        <div class="prod-name">Cat Eye Frames</div>
+        <div class="prod-det">Elegant cat-eye for women, multiple colors available.</div>
+        <div class="prod-foot">
+          <div><div class="prod-price">₹499</div><div class="prod-sub">Up to ₹1,999</div></div>
+          <button class="prod-btn">Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card" onclick="window.open('https://wa.me/919334189990?text=Hi!%20I%20want%20to%20know%20about%20Blue%20Cut%20Lenses','_blank')">
+      <div class="prod-img" style="background:#0a1520"><span>💻</span><span class="prod-badge">New</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Crizal / Nikon</div>
+        <div class="prod-name">Blue Cut Lenses</div>
+        <div class="prod-det">Say NO to UV &amp; Blue Light. Premium anti-glare coating.</div>
+        <div class="prod-foot">
+          <div><div class="prod-price">₹799</div><div class="prod-sub">Up to ₹3,500</div></div>
+          <button class="prod-btn">Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="prod-card" onclick="window.open('https://wa.me/919334189990?text=Hi!%20I%20want%20to%20know%20about%20Sport%20Sunglasses','_blank')">
+      <div class="prod-img" style="background:#0a1a0a"><span>🏃</span><span class="prod-badge">Popular</span></div>
+      <div class="prod-body">
+        <div class="prod-brand">Oakley Style</div>
+        <div class="prod-name">Sport Wraparound</div>
+        <div class="prod-det">High-impact protection with polarized lenses in vibrant colors.</div>
+        <div class="prod-foot">
+          <div><div class="prod-price">₹699</div><div class="prod-sub">Up to ₹2,999</div></div>
+          <button class="prod-btn">Enquire</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why-sec">
+  <span class="s-lbl" style="color:rgba(255,255,255,0.28)">Why Choose Us</span>
+  <h2 class="s-h" style="color:var(--white)">The Al Faris <em style="color:rgba(255,255,255,0.3)">Difference</em></h2>
+  <div class="why-grid">
+    <div class="why-card"><span class="why-ic">🏆</span><h3>Premium Brands</h3><p>Genuine frames from Ray-Ban, Vogue, Prada, Gucci, Oakley, Dior &amp; more iconic brands.</p></div>
+    <div class="why-card"><span class="why-ic">🔍</span><h3>Eye Testing</h3><p>Professional eye check available. Get your exact prescription fitted the same day.</p></div>
+    <div class="why-card"><span class="why-ic">💰</span><h3>Best Prices</h3><p>Competitive pricing on all frames and lenses. Starting from just ₹299 — no compromise on quality.</p></div>
+    <div class="why-card"><span class="why-ic">⚡</span><h3>Same Day Ready</h3><p>Most prescription glasses ready within hours. Fast turnaround because your time matters.</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec contact-sec" id="contact">
+  <span class="s-lbl">Find Us</span>
+  <h2 class="s-h">Visit <em>Al Faris</em> Optical</h2>
+  <p class="s-p">We're conveniently located in Azad Nagar, Mango. Walk in any day — we'd love to help you find the perfect pair.</p>
+  <div class="contact-grid">
+    <div class="c-info">
+      <div class="c-row">
+        <div class="c-icon">📍</div>
+        <div>
+          <div class="c-lbl">Address</div>
+          <div class="c-val">Road No 2, Near Bharat Bakery,<br>Azad Nagar, Mango,<br>Jamshedpur — Jharkhand</div>
+        </div>
+      </div>
+      <div class="c-row">
+        <div class="c-icon">📞</div>
+        <div>
+          <div class="c-lbl">Phone / WhatsApp</div>
+          <div class="c-val"><a href="tel:+919334189990">+91 93341 89990</a></div>
+        </div>
+      </div>
+      <div class="c-row">
+        <div class="c-icon">🕐</div>
+        <div>
+          <div class="c-lbl">Store Hours</div>
+          <div class="c-val">Mon – Sat: 10:00 AM – 9:00 PM<br>Sunday: 11:00 AM – 7:00 PM</div>
+        </div>
+      </div>
+      <a href="https://wa.me/919334189990" target="_blank" class="wa-big">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.741 5.473 2.038 7.773L.047 31.953l8.385-2.198A15.924 15.924 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.292 13.292 0 01-6.797-1.866l-.487-.289-5.016 1.315 1.337-4.884-.317-.5A13.26 13.26 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.278-9.917c-.398-.199-2.356-1.163-2.72-1.296-.365-.133-.631-.199-.897.2-.266.398-1.03 1.296-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.057-1.981-2.363-2.213-2.761-.232-.398-.025-.613.174-.811.179-.179.398-.465.597-.697.199-.233.266-.399.398-.665.133-.266.067-.499-.033-.697-.1-.2-.897-2.163-1.23-2.96-.324-.777-.653-.672-.897-.684-.232-.01-.499-.013-.765-.013s-.698.1-1.064 1.063c-.366.963 1.062 2.12 3.297 3.218"/></svg>
+        Message on WhatsApp
+      </a>
+    </div>
+    <div class="c-form">
+      <h3>Send an Enquiry</h3>
+      <div class="f-grp"><label>Your Name</label><input type="text" id="fn" placeholder="Full name"></div>
+      <div class="f-grp"><label>Phone Number</label><input type="tel" id="fp" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="f-grp"><label>What are you looking for?</label><textarea id="fm" rows="3" placeholder="e.g. Prescription glasses, Sunglasses, Blue-cut lenses..."></textarea></div>
+      <button class="f-sub" onclick="sendWA()">Send via WhatsApp →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-brand">Al Faris Optical</div>
+      <div class="foot-tag">Premium Eyewear · Mango, Jamshedpur</div>
+    </div>
+    <ul class="foot-links">
+      <li><a href="#store">Our Store</a></li>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#frames">Frames</a></li>
+      <li><a href="tel:+919334189990">Call Us</a></li>
+      <li><a href="https://wa.me/919334189990" target="_blank">WhatsApp</a></li>
+    </ul>
+  </div>
+  <div class="foot-btm">© 2025 Al Faris Optical, Mango, Jamshedpur. All rights reserved.</div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/919334189990" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <span class="wa-bubble">💬 Chat with us</span>
+  <div class="wa-circle">
+    <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.741 5.473 2.038 7.773L.047 31.953l8.385-2.198A15.924 15.924 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.292 13.292 0 01-6.797-1.866l-.487-.289-5.016 1.315 1.337-4.884-.317-.5A13.26 13.26 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.278-9.917c-.398-.199-2.356-1.163-2.72-1.296-.365-.133-.631-.199-.897.2-.266.398-1.03 1.296-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.62-3.202-1.977-1.183-1.057-1.981-2.363-2.213-2.761-.232-.398-.025-.613.174-.811.179-.179.398-.465.597-.697.199-.233.266-.399.398-.665.133-.266.067-.499-.033-.697-.1-.2-.897-2.163-1.23-2.96-.324-.777-.653-.672-.897-.684-.232-.01-.499-.013-.765-.013s-.698.1-1.064 1.063c-.366.963 1.062 2.12 3.297 3.218"/></svg>
+  </div>
+</a>
+
+<script>
+// Carousel logic
+let cIdx = 0;
+const cTotal = 3;
+const cTrack = document.getElementById('cTrack');
+const cSlides = document.querySelectorAll('.carousel-slide');
+const cDotEls = document.querySelectorAll('.c-dot');
+
+function cGoto(n) {
+  cSlides[cIdx].classList.remove('is-active');
+  cDotEls[cIdx].classList.remove('on');
+  cIdx = (n + cTotal) % cTotal;
+  cSlides[cIdx].classList.add('is-active');
+  cDotEls[cIdx].classList.add('on');
+  cTrack.style.transform = `translateX(-${cIdx * 100}%)`;
+}
+function cSlide(d) { cGoto(cIdx + d); }
+setInterval(() => cSlide(1), 5000);
+
+// WhatsApp enquiry
+function sendWA() {
+  const n = document.getElementById('fn').value || 'Customer';
+  const p = document.getElementById('fp').value || '';
+  const m = document.getElementById('fm').value || 'General inquiry';
+  const t = encodeURIComponent(`Hi! I'm ${n}${p ? ' (' + p + ')' : ''}. Enquiring about: ${m}`);
+  window.open(`https://wa.me/919334189990?text=${t}`, '_blank');
+}
+</script>
+</body>
+</html>
